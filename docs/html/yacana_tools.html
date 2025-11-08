@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yacana_tools package &mdash; Yacana Tools 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="yacana_tools" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Yacana Tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">yacana_tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">yacana_tools package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-yacana_tools.file_read_tool">yacana_tools.file_read_tool module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#yacana_tools.file_read_tool.FileReadTool"><code class="docutils literal notranslate"><span class="pre">FileReadTool</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-yacana_tools.file_write_tool">yacana_tools.file_write_tool module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#yacana_tools.file_write_tool.FileWriteTool"><code class="docutils literal notranslate"><span class="pre">FileWriteTool</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Yacana Tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">yacana_tools</a></li>
+      <li class="breadcrumb-item active">yacana_tools package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/yacana_tools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="yacana-tools-package">
+<h1>yacana_tools package<a class="headerlink" href="#yacana-tools-package" title="Link to this heading"></a></h1>
+<section id="module-yacana_tools.file_read_tool">
+<span id="yacana-tools-file-read-tool-module"></span><h2>yacana_tools.file_read_tool module<a class="headerlink" href="#module-yacana_tools.file_read_tool" title="Link to this heading"></a></h2>
+<p>File Read Tool for Yacana</p>
+<p>This module provides a tool for reading content from files in the local filesystem.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="yacana_tools.file_read_tool.FileReadTool">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yacana_tools.file_read_tool.</span></span><span class="sig-name descname"><span class="pre">FileReadTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rootdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_custom_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_call_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ToolType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ToolType.YACANA</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#yacana_tools.file_read_tool.FileReadTool" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Tool</span></code></p>
+<p>A tool for reading content from file in the local filesystem.</p>
+<p>This class provides functionality to read the contents of a file and return it
+as a string. It ensures that the provided path is valid and that the file exists
+before attempting to read it.
+This class is based to Tool class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rootdir</strong> (<em>str</em>) – The root directory path where the file is located.
+Defaults to “.”.</p></li>
+<li><p><strong>optional</strong> (<em>bool</em>) – Whether the tool is optional.
+Defaults to False.</p></li>
+<li><p><strong>max_custom_error</strong> (<em>int</em>) – Maximum number of custom errors allowed.
+Defaults to 5.</p></li>
+<li><p><strong>max_call_error</strong> (<em>int</em>) – Maximum number of call errors allowed.
+Defaults to 5.</p></li>
+<li><p><strong>tool_type</strong> (<em>ToolType</em>) – Type of tool (e.g., YACANA, OPENAI).
+Defaults to YACANA.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yacana_tools.file_read_tool.FileReadTool.rootdir">
+<span class="sig-name descname"><span class="pre">rootdir</span></span><a class="headerlink" href="#yacana_tools.file_read_tool.FileReadTool.rootdir" title="Link to this definition"></a></dt>
+<dd><p>The root directory path where the file is located.
+Defaults to “.”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – If the provided path is not a string.</p></li>
+<li><p><strong>ValueError</strong> – If the provided path is not a valid directory.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="yacana_tools.file_read_tool.FileReadTool.read_content">
+<span class="sig-name descname"><span class="pre">read_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#yacana_tools.file_read_tool.FileReadTool.read_content" title="Link to this definition"></a></dt>
+<dd><p>Read the content of a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – The name of the file to read.
+Note: the path of this file MUST be relative.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The content of the file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ToolError</strong> – If the file name is not provided or is invalid.
+    If the file does not exist or cannot be read.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-yacana_tools.file_write_tool">
+<span id="yacana-tools-file-write-tool-module"></span><h2>yacana_tools.file_write_tool module<a class="headerlink" href="#module-yacana_tools.file_write_tool" title="Link to this heading"></a></h2>
+<p>File Write Tool for Yacana</p>
+<p>This module provides a tool to write or save content to a file in the local filesystem.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="yacana_tools.file_write_tool.FileWriteTool">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yacana_tools.file_write_tool.</span></span><span class="sig-name descname"><span class="pre">FileWriteTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rootdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_custom_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_call_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ToolType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ToolType.YACANA</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#yacana_tools.file_write_tool.FileWriteTool" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Tool</span></code></p>
+<p>A tool for writing content to a file in the local filesystem.</p>
+<p>This class provides functionality to write the contents of a file.
+It ensures that the provided path is valid and that the file exists
+before attempting to write it.
+This class is based to Tool class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rootdir</strong> (<em>str</em>) – The root directory path where the file will be written.
+Defaults to “.”.</p></li>
+<li><p><strong>create_dir</strong> (<em>bool</em>) – If True, the directory will be created if it doesn’t exist.
+Defaults to False.</p></li>
+<li><p><strong>force</strong> (<em>bool</em>) – If True, the file will be overwritten if it already exists.
+Defaults to False.</p></li>
+<li><p><strong>optional</strong> (<em>bool</em>) – Whether the tool is optional.
+Defaults to False.</p></li>
+<li><p><strong>max_custom_error</strong> (<em>int</em>) – Maximum number of custom errors allowed.
+Defaults to 5.</p></li>
+<li><p><strong>max_call_error</strong> (<em>int</em>) – Maximum number of call errors allowed.
+Defaults to 5.</p></li>
+<li><p><strong>tool_type</strong> (<em>ToolType</em>) – Type of tool (e.g., YACANA, OPENAI).
+Defaults to YACANA.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yacana_tools.file_write_tool.FileWriteTool.rootdir">
+<span class="sig-name descname"><span class="pre">rootdir</span></span><a class="headerlink" href="#yacana_tools.file_write_tool.FileWriteTool.rootdir" title="Link to this definition"></a></dt>
+<dd><p>The root directory path where the file will be written.
+Defaults to “.”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yacana_tools.file_write_tool.FileWriteTool.create_dir">
+<span class="sig-name descname"><span class="pre">create_dir</span></span><a class="headerlink" href="#yacana_tools.file_write_tool.FileWriteTool.create_dir" title="Link to this definition"></a></dt>
+<dd><p>If True, the directory will be created if it doesn’t exist.
+Defaults to False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yacana_tools.file_write_tool.FileWriteTool.force">
+<span class="sig-name descname"><span class="pre">force</span></span><a class="headerlink" href="#yacana_tools.file_write_tool.FileWriteTool.force" title="Link to this definition"></a></dt>
+<dd><p>If True, the file will be overwritten if it already exists.
+Defaults to False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the provided path is not a valid directory.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="yacana_tools.file_write_tool.FileWriteTool.write_content">
+<span class="sig-name descname"><span class="pre">write_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#yacana_tools.file_write_tool.FileWriteTool.write_content" title="Link to this definition"></a></dt>
+<dd><p>Write the provided content to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – The name of the file to be written.
+Note: the path of this file MUST be relative.</p></li>
+<li><p><strong>content</strong> (<em>str</em>) – The content to be written to the file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ToolError</strong> – If the file name is not provided or is invalid.
+    If the file does not exist or cannot be written.
+    If the content is not provided or is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="yacana_tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yohann Chastre.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
