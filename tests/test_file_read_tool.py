@@ -56,7 +56,7 @@ class TestFileReadTool:
         TBC
         """
 
-        return FileReadTool(os.getcwd(), max_custom_error=1, max_call_error=1)
+        return FileReadTool(os.getcwd(), max_custom_error=0, max_call_error=0)
 
     @pytest.fixture
     def agent(self):
@@ -81,7 +81,7 @@ class TestFileReadTool:
         TBC
         """
 
-        with pytest.raises(ValueError, match="Parameter 'rootdir' expected a valid directory"):
+        with pytest.raises(ValueError, match="Parameter 'root_dir' expected a valid directory"):
             FileReadTool("bob")
 
     def test_llm_successed(self, setup_and_teardown, file_read_tool, agent):

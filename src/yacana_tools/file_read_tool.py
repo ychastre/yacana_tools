@@ -22,8 +22,8 @@ class FileReadTool(Tool):
 
     Parameters
     ----------
-    rootdir : str
-        The root directory path where the file is located.
+    root_dir : str
+        The root directory path from where the file is located.
         Defaults to ".".
     optional : bool
         Whether the tool is optional.
@@ -40,31 +40,32 @@ class FileReadTool(Tool):
 
     Attributes
     ----------
-    rootdir : str
+    root_dir : str
         The root directory path where the file is located.
         Defaults to ".".
 
     Raises
     ------
-    TypeError
-        If the provided path is not a string.
     ValueError
         If the provided path is not a valid directory.
     """
 
     def __init__(self,
-                 rootdir: str = ".",
+                 root_dir: str = ".",
                  optional: bool = False,
                  max_custom_error: int = 5,
                  max_call_error: int = 5,
                  tool_type: ToolType = ToolType.YACANA):
 
-        # Validate that the path is a valid directory
-        if not Path(rootdir).is_dir():
-            raise ValueError("Parameter 'rootdir' expected a valid directory")
+        # Validate that the parameter 'rootdir' is a valid directory
+        root_dir = os.path.normpath(root_dir)
+        root_dir = os.path.abspath(root_dir)
+
+        if not Path(root_dir).is_dir():
+            raise ValueError("Parameter 'root_dir' expected a valid directory")
 
         # Set all attributes
-        self.rootdir = os.path.normpath(rootdir)
+        self.root_dir = root_dir
 
         # Call the parent class constructor to initialize the tool
         super().__init__(
@@ -77,10 +78,11 @@ class FileReadTool(Tool):
             tool_type=tool_type
         )
 
-
     def read_content(self, file_name: str) -> str:
         """
         Read the content of a file.
+
+        Note: this function is expected to be called the LLM.
 
         Parameters
         ----------
@@ -109,13 +111,13 @@ class FileReadTool(Tool):
             raise ToolError("File name is not a relative path.")
 
         # Construct the full file path
-        long_file_name = os.path.join(self.rootdir, file_name)
+        long_file_name = os.path.join(self.root_dir, file_name)
 
         # Normalize the full file path
         long_file_name = os.path.normpath(long_file_name)
 
-        # Validate that the full file path is inside the path
-        if long_file_name.find(self.rootdir, 0) == -1:
+        # Validate that the full file path is inside the root directory path
+        if long_file_name.find(self.root_dir, 0) == -1:
             raise ToolError("File name is not in root directory.")
 
         # Validate that the file exists

@@ -22,8 +22,8 @@ class FileWriteTool(Tool):
 
     Parameters
     ----------
-    rootdir : str
-        The root directory path where the file will be written.
+    root_dir : str
+        The root directory path from where the file will be written.
         Defaults to ".".
     create_dir : bool
         If True, the directory will be created if it doesn't exist.
@@ -46,7 +46,7 @@ class FileWriteTool(Tool):
 
     Attributes
     ----------
-    rootdir : str
+    root_dir : str
         The root directory path where the file will be written.
         Defaults to ".".
     create_dir : bool
@@ -63,7 +63,7 @@ class FileWriteTool(Tool):
     """
 
     def __init__(self,
-                 rootdir: str = ".",
+                 root_dir: str = ".",
                  create_dir: bool = False,
                  force: bool = False,
                  optional: bool = False,
@@ -71,16 +71,19 @@ class FileWriteTool(Tool):
                  max_call_error: int = 5,
                  tool_type: ToolType = ToolType.YACANA):
 
-        # Validate that 'path' is a valid directory
-        if not Path(rootdir).is_dir():
-            raise ValueError("Parameter 'rootdir' expected a valid directory")
+        # Validate that the parameter 'rootdir' is a valid directory
+        root_dir = os.path.normpath(root_dir)
+        root_dir = os.path.abspath(root_dir)
+
+        if not Path(root_dir).is_dir():
+            raise ValueError("Parameter 'root_dir' expected a valid directory")
 
         # Set all attributes
-        self.rootdir = os.path.normpath(rootdir)
+        self.root_dir = root_dir
         self.create_dir = create_dir
         self.force = force
 
-        # Initialize the parent Tool class
+        # Call the parent class constructor to initialize the tool
         super().__init__(
             tool_name="FileWrite",
             function_description="Write or save content to file in local filesystem",
@@ -96,7 +99,9 @@ class FileWriteTool(Tool):
                      file_name: str,
                      content: str) -> None:
         """
-        Write the provided content to a file.
+        Write the provided content in a file.
+
+        Note: this function is expected to be called the LLM.
 
         Parameters
         ----------
@@ -118,27 +123,27 @@ class FileWriteTool(Tool):
             If the content is not provided or is invalid.
         """
 
-        # Validate that 'file_name' is not empty
+        # Validate that the file name is provided
         if not file_name:
             raise ToolError("File name was not provided or None.")
 
         # Validate that the path of the file is relative
         if Path(file_name).is_absolute():
-            raise ToolError("File name has not a relative path.")
+            raise ToolError("File name is not a relative path.")
 
         # Validate that 'content' is not empty
         if not content or content == "":
             raise ToolError("Content was not provided or is empty.")
 
-        # Construct the full path to the file
-        long_file_name = os.path.join(self.rootdir, file_name)
+        # Construct the full file path
+        long_file_name = os.path.join(self.root_dir, file_name)
 
         # Normalize the full file path
         long_file_name = os.path.normpath(long_file_name)
 
-        # Validate that the full file path is inside the path
-        if long_file_name.find(self.rootdir, 0) == -1:
-            raise ToolError("File name has not in root directory.")
+        # Validate that the full file path is inside the root directory path
+        if long_file_name.find(self.root_dir, 0) == -1:
+            raise ToolError("File name is not in root directory.")
 
         long_dir_name = os.path.dirname(long_file_name)
 

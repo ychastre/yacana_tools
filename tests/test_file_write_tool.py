@@ -65,14 +65,12 @@ class TestFileWriteTool:
         TBC
         """
 
-        if os.path.exists(FILE_NAME):
-            shutil.rmtree(DIR_NAME, ignore_errors=True)
+        shutil.rmtree(DIR_NAME, ignore_errors=True)
         pathlib.Path(DIR_NAME).mkdir(parents=True, exist_ok=True)
 
         yield
 
-        if os.path.exists(FILE_NAME):
-            shutil.rmtree(DIR_NAME, ignore_errors=True)
+        shutil.rmtree(DIR_NAME, ignore_errors=True)
 
     @pytest.fixture
     def setup_and_teardown_existing_file(self):
@@ -87,8 +85,7 @@ class TestFileWriteTool:
 
         yield
 
-        if os.path.exists(FILE_NAME):
-            shutil.rmtree(DIR_NAME, ignore_errors=True)
+        shutil.rmtree(DIR_NAME, ignore_errors=True)
 
     @pytest.fixture
     def setup_and_teardown_no_existing_dir(self):
@@ -96,13 +93,11 @@ class TestFileWriteTool:
         TBC
         """
 
-        if pathlib.Path(NOT_EXISTING_DIR_NAME).exists():
-            shutil.rmtree(NOT_EXISTING_DIR_NAME, ignore_errors=True)
+        shutil.rmtree(NOT_EXISTING_DIR_NAME, ignore_errors=True)
 
         yield
 
-        if pathlib.Path(NOT_EXISTING_DIR_NAME).exists():
-            shutil.rmtree(NOT_EXISTING_DIR_NAME, ignore_errors=True)
+        shutil.rmtree(NOT_EXISTING_DIR_NAME, ignore_errors=True)
 
     def test_init_succeeded(self):
         """
@@ -114,12 +109,12 @@ class TestFileWriteTool:
         except ValueError:
             assert False
 
-    def test_init_failed_not_absolute_path(self):
+    def test_init_failed_not_dir_path(self):
         """
         TBC
         """
 
-        with pytest.raises(ValueError, match="Parameter 'rootdir' expected a valid directory"):
+        with pytest.raises(ValueError, match="Parameter 'root_dir' expected a valid directory"):
             FileWriteTool("bob")
 
     def test_llm_succeeded(self, setup_and_teardown, file_write_tool, agent): # pylint: disable=W0613
